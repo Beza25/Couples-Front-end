@@ -8,7 +8,7 @@ class Chat extends Component {
                 <div className="row">
                     <div className="col-4">
                         <h1> Partner_A</h1>
-                        <h5> Hi Babe</h5>
+                        <h5> {this.props.text.content}</h5>
                 
                     </div>
                     <br/>

@@ -5,6 +5,8 @@ import ChatContainer from '../Components/ChatContainer';
 
 class MainPage extends Component{
 
+  
+
     render (){
         return(
            <div >

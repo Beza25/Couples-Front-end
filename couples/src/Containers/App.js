@@ -13,8 +13,19 @@ import { BrowserRouter, Route, Switch} from 'react-router-dom';
 
 class App extends Component {
 
+  constructor(){
+    super()
+    this.state={
+      users: []
+    }
+  }
+
   componentDidMount(){
     console.log("Component Did Mount")
+    fetch("http://localhost:3001/users")
+    .then(resp => resp.json())
+    .then(userArr => this.setState({users: userArr}))
+    
   }
 
   render() {
@@ -25,9 +36,9 @@ class App extends Component {
      <BrowserRouter>
      <NavBar title='Paintr' icon="https://cdn5.vectorstock.com/i/1000x1000/55/84/love-couple-logo-vector-7545584.jpg" color="blue" subtitle="List of Paintng" />
       <Switch> 
-          <Route exact path= "/" render= { ()=> <LoginForm />} /> 
+          <Route exact path= "/" render= { ()=> <LoginForm  users = {this.state.users}/>} /> 
           <Route exact path= "/mainPage" render= { ()=> <MainPage />} /> 
-          <Route exact path= "/profile" render= { ()=> <ProfileContainer />} /> 
+          <Route exact path= "/profile" render= { ()=> <ProfileContainer  />} /> 
           <Route render= { ()=><div> Page Not Found 404</div>} /> 
         </Switch>
      </BrowserRouter>
