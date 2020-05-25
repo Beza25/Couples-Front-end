@@ -37,7 +37,7 @@ class App extends Component {
      <NavBar title='Paintr' icon="https://cdn5.vectorstock.com/i/1000x1000/55/84/love-couple-logo-vector-7545584.jpg" color="blue" subtitle="List of Paintng" />
       <Switch> 
           <Route exact path= "/" render= { ()=> <LoginForm  users = {this.state.users}/>} /> 
-          <Route exact path= "/mainPage" render= { ()=> <MainPage />} /> 
+          <Route exact path= "/mainPage" render= { ()=> <MainPage users={this.state.users}/>} /> 
           <Route exact path= "/profile" render= { ()=> <ProfileContainer  />} /> 
           <Route render= { ()=><div> Page Not Found 404</div>} /> 
         </Switch>
