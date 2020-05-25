@@ -58,4 +58,9 @@ class ChatContainer extends Component {
 
 }
 
+// P: want to know who is typing so that I can send its user_id when creating a text
+// S: need to track current user == user loged in
+// current user is found in loginForm so need to send it back to app 
+// and change the state current user and pass down to main page
+
 export default ChatContainer
