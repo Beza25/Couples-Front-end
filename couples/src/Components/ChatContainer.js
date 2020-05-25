@@ -27,7 +27,7 @@ class ChatContainer extends Component {
 
         // userId should be dynamic !!!!!!!!!!!
         const newText = {
-            user_id: 6,
+            user_id: 8,
             content: text
         } 
         fetch("http://localhost:3001/messages", {   

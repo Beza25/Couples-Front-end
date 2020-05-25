@@ -20,8 +20,8 @@ class MainPage extends Component{
                     </div>
                     <div className="col-8">
                         <h1> Chat</h1>
-                        {this.props.users.map()}
-                        <ChatContainer />
+                        {this.props.users.map(user =>  <ChatContainer user= {user}/>)}
+                       
                     </div>
                 </div>
             </div>
