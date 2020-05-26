@@ -10,15 +10,10 @@ class ChatContainer extends Component {
         // debugger
         this.state= {
             texts: this.props.userTexts,
-            message: {}
         }
     }
-
-    // messages created by user before texts = this.props.UserText
-
-
     createText = (text) => {
-        // userId should be dynamic !!!!!!!!!!!
+       
         const newText = {
             user_id: this.props.currentUser.id,
             content: text
@@ -34,9 +29,7 @@ class ChatContainer extends Component {
         })
         .then(response => response.json())
         .then(newText => {
-            console.log('Success:', newText);
-
-            this.setState({message: newText, texts: [...this.state.texts, newText.textObj]})
+            this.setState({message: newText, texts: [...this.state.texts, newText]})
         
         })}
        
@@ -45,14 +38,9 @@ class ChatContainer extends Component {
 // (at this point the api has all the user text so I just have to show that text)then
 // change the DOM to show previous and existing user's text
 
-// 
     
-
     render() {
-        console.log(this.state.message)
-        
-        return (
-           
+        return (   
            <div>
                <div className= "container">
                     <div className="row">
@@ -62,13 +50,13 @@ class ChatContainer extends Component {
                             <h1>{this.props.currentUser.name}</h1>
             
                             
-                            {this.state.texts.map((userText,index) => <Chat text={userText} key={index} message = {this.state.message}/> ) }
+                            {this.state.texts.map((userText,index) => <Chat text={userText} key={index} user= {this.props.currentUser.name} /> ) }
                         </div>
                         <br/>
                         <div className="col-6">
                             <h1>Partner</h1>
 
-                            {this.state.texts.map((partnerText,index) => <Chat text={partnerText} key={index} message = {this.state.message}/> ) }
+                            {this.props.pTexts.map((partnerText,index) => <Chat text={partnerText} key={index} user= {this.props.partner.name}/>  ) }
                         </div>
                     </div>
                 </div>

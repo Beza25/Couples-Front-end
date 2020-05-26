@@ -35,7 +35,7 @@ class LoginForm extends Component{
                 'Accept': 'application/json'
                 },
                 // {username: this.state.username}
-        body: JSON.stringify( {username: "rach"}),
+        body: JSON.stringify( {username: this.state.username}),
         })
         .then(response => response.json())
         .then(userInfo => {
@@ -63,8 +63,8 @@ class LoginForm extends Component{
                      iconPosition='left' 
                      placeholder='username' 
                      name = "username"
-                    //  value = {this.state.username}
-                    value = "rach"
+                     value = {this.state.username}
+                    // value = "rach"
                      onChange={this.handleChange}
                      />
                     <Form.Input

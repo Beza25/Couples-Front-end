@@ -8,6 +8,8 @@ class MainPage extends Component{
   
 
     render (){
+
+       
         return(
            <div >
                <h1> Welcome {this.props.currentUser.name}</h1>
@@ -21,7 +23,12 @@ class MainPage extends Component{
                     <div className="col-8">
                         <h1> Chat</h1>
 
-                        <ChatContainer currentUser={this.props.currentUser} userTexts= {this.props.userTexts} />
+                        <ChatContainer 
+                            currentUser={this.props.currentUser} 
+                            userTexts= {this.props.userTexts}
+                            partner= {this.props.partner}
+                            pTexts= {this.props.pTexts}
+                             />
 
                     </div>
                 </div>

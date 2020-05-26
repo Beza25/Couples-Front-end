@@ -1,23 +1,20 @@
 import React, { Component } from 'react';
 // import { Icon, Popup } from 'semantic-ui-react'
 // import { Message } from 'semantic-ui-react'
+import moment from 'moment';
 
 
 class Chat extends Component {
-
-    
-
-
     render() {
-        // console.log(this.props)
         return (
          
             <div>
-                <div> You {this.props.message.texted_at}</div>
+                <br/>
+                <div> {this.props.user} {moment(this.props.text.created_at).format('LT') }</div>
                   <div className="ui message">
                      
                     <div className="content">
-                    
+                        
                         <h4>
                         {this.props.text.content}
                         </h4>
