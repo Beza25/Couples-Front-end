@@ -1,25 +1,32 @@
 import React, { Component } from 'react';
+// import { Icon, Popup } from 'semantic-ui-react'
+// import { Message } from 'semantic-ui-react'
 
 
 class Chat extends Component {
+
+    
+
+
     render() {
+        // console.log(this.props)
         return (
-            <div className= "container">
-                <div className="row">
-                    <div className="col-4">
-                        <h1> Partner_A</h1>
-                        <h5> {this.props.text.content}</h5>
-                
-                    </div>
-                    <br/>
-                    <div className="col-8">
-                        <h1> Partner_B</h1>
-                        <h5> hi love</h5>
+         
+            <div>
+                <div> You {this.props.message.texted_at}</div>
+                  <div className="ui message">
+                     
+                    <div className="content">
                     
+                        <h4>
+                        {this.props.text.content}
+                        </h4>
                     </div>
                 </div>
+
             </div>
         );
       }
 }
 export default Chat;
+
