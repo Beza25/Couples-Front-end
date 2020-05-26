@@ -10,7 +10,7 @@ class MainPage extends Component{
     render (){
         return(
            <div >
-               <h1> MainPage</h1>
+               <h1> Welcome {this.props.currentUser.name}</h1>
             <div className= "container">
                 <div className="row">
                     <div className="col-4">
@@ -20,8 +20,8 @@ class MainPage extends Component{
                     </div>
                     <div className="col-8">
                         <h1> Chat</h1>
-                        {this.props.users.map()}
-                        <ChatContainer />
+                    
+                        <ChatContainer currentUser={this.props.currentUser} userTexts= {this.props.userTexts} />
                     </div>
                 </div>
             </div>

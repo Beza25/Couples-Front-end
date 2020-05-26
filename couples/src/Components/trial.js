@@ -55,4 +55,49 @@
 
 
 
+<div>   
+<div className="ui placeholder segment">
+    <div className="ui two column very relaxed stackable grid">
+        <div className="column">
+            <form className="ui-form"  onSubmit = {this.handleSubmit}>
+            <div className="ui form" >
+                <div className="field">
+                    <label>Username</label>
+                    <div className="ui left icon input">
+                        <input type="text" placeholder="Username" name="username"  value= {this.state.username}
+                        onChange={this.handleChange}
+                        />
+                        <i className="user icon"></i>
+                    </div>
+                </div>
+                <div className="field">
+                    <label>Password</label>
+                    <div className="ui left icon input">
+                        <input type="password" name="password"  value= {this.state.password}
+                         onChange={this.handleChange}
+                        />
+                        <i  className="lock icon"></i>
+                    </div>
+                </div>
+                <button className="ui blue submit button" >Login</button>
+            </div>
+            </form>
+        </div>
+        <div className="middle aligned column">
+            <div className="ui big button">
+                <i className="signup icon"></i>
+                Sign Up
+            </div>
+        </div>
+    </div>
+        <div className="ui vertical divider">
+            Or
+        </div>
+    </div>
+</div>
+
+this.setState({texts: [...texts, this.props.userTexts]})
+console.log(this.state.texts)
+
+
 
