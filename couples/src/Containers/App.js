@@ -61,7 +61,8 @@ class App extends Component {
 
      
           <Route exact path= "/profile" render= { ()=> ( 
-            this.state.currentUser ?  <ProfileContainer  /> : <Redirect to="/" />
+            this.state.currentUser ?  <ProfileContainer 
+            currentUser={this.state.currentUser}  partner= {this.state.partner}  /> : <Redirect to="/" />
          
           )} /> 
           <Route render= { ()=><div> Page Not Found 404</div>} /> 

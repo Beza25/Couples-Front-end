@@ -1,6 +1,9 @@
 
 import React from "react";
-import {Link} from 'react-router-dom'
+import {Link} from 'react-router-dom';
+import ProfileEdit from "../Components/ProfileEdit";
+import ProfileInfo from "../Components/ProfileInfo";
+import { Dropdown } from 'semantic-ui-react';
 
 const NavBar =  (props )=> {
     return (
@@ -22,6 +25,16 @@ const NavBar =  (props )=> {
                 <div className="item">
                     <Link to="/profile">Profile</Link>
                 </div>
+                {/* <span>
+                Show me posts by{' '}
+                <Dropdown
+                    inline
+                    options={[ <ProfileEdit />,  <ProfileInfo /> ]}
+                    // defaultValue={}
+                    />
+
+                </span> */}
+                
                
             </div>
 
