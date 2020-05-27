@@ -5,6 +5,7 @@ import NavBar from'./NavBar' ;
 import LoginForm from './LoginForm';
 import MainPage from './MainPage';
 import ProfileContainer from './ProfileContainer';
+// import SpecialDaysContainer from "./SpecialDaysContainer"
 import { BrowserRouter, Route, Redirect, Switch} from 'react-router-dom';
 
 class App extends Component {
@@ -16,7 +17,10 @@ class App extends Component {
       currentUser: null,
       userTexts: [],
       partner: null,
-      pTexts:[]
+      pTexts:[],
+      // specialDates:[],
+      searchTerm: ""
+      
     }
   }
 
@@ -32,14 +36,22 @@ class App extends Component {
     this.setState({currentUser: userInfo.userObj, 
                   userTexts: userInfo.userTexts,
                   partner: userInfo.partner,
-                  pTexts: userInfo.p_texts
+                  pTexts: userInfo.p_texts,
+                  // specialDates: userInfo.special_days
 
                  })
   }
 
+  onChange= (e )=>{
+    this.setState({ searchTerm: e.target.value})
+  }
+
+  // filterd = this.state.specialDates.filter(sd => sd.title.lowerCase().includes(this.state.searchTerm.lowerCase()))
+
   //if current urser is null show loginform
   // else redirect to mainpage
   render() {
+    // console.log(this.state.specialDates)
   return (
     <div className="App">
   
@@ -65,6 +77,19 @@ class App extends Component {
             currentUser={this.state.currentUser}  partner= {this.state.partner}  /> : <Redirect to="/" />
          
           )} /> 
+             {/* <Route exact path= "/specialDates" render= { ()=> ( 
+            this.state.currentUser ?  <SpecialDaysContainer
+            currentUser={this.state.currentUser} 
+             partner= {this.state.partner}
+              specialDates= {this.state.specialDates}
+              onChange = {this.onChange}
+              searchTerm ={this.state.searchTerm} 
+              filtered= {this.filterd()}
+               /> : <Redirect to="/" /> */}
+         
+          )} /> 
+
+
           <Route render= { ()=><div> Page Not Found 404</div>} /> 
         </Switch>
      </BrowserRouter>

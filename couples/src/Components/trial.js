@@ -100,4 +100,11 @@ this.setState({texts: [...texts, this.props.userTexts]})
 console.log(this.state.texts)
 
 
+// <div className="item">
+//                             <i className="large github middle aligned icon"></i>
+//                             <div className="content">
+//                                 {/* <Link to="/themes">   <h1> Themes</h1></Link>          */}
+//                             </div>
+//                         </div>
+
 

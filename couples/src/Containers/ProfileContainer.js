@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import ProfileEdit from "../Components/ProfileEdit";
 import ProfileInfo from "../Components/ProfileInfo";
-import { Dropdown } from 'semantic-ui-react'
-import { BrowserRouter, Route, Redirect, Switch} from 'react-router-dom';
+
 
 class ProfileContainer extends Component{
     constructor(){

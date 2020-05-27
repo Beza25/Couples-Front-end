@@ -23,10 +23,10 @@ class LoginForm extends Component{
         // get the value of user input and save it to the state
         // post fetch the user => pass the user info App
         // App => MainPage => Change the Dom to show the MainPage
-        let loginInfo = {
-            username: this.state.user,
+        // let loginInfo = {
+        //     username: this.state.user,
     
-        }
+        // }
         fetch("http://localhost:3001/login", {   
         method: 'POST', // or 'PUT'
         headers: {
