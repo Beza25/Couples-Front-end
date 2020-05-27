@@ -1,9 +1,7 @@
 
 import React from "react";
 import {Link} from 'react-router-dom';
-import ProfileEdit from "../Components/ProfileEdit";
-import ProfileInfo from "../Components/ProfileInfo";
-import { Dropdown } from 'semantic-ui-react';
+
 
 const NavBar =  (props )=> {
     return (

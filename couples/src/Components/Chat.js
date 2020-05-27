@@ -8,7 +8,7 @@ class Chat extends Component {
     render() {
         return (
          
-            <div>
+            <div onDoubleClick = {() => this.props.deleteText(this.props.text.id)}>
                 <br/>
                 <div> {this.props.user} {moment(this.props.text.created_at).format('LT') }</div>
                   <div className="ui message">

@@ -16,7 +16,8 @@ class App extends Component {
       currentUser: null,
       userTexts: [],
       partner: null,
-      pTexts:[]
+      pTexts:[],
+      updated: false
     }
   }
 
@@ -39,12 +40,21 @@ class App extends Component {
 
   //if current urser is null show loginform
   // else redirect to mainpage
+
+  handleEdit = (user) => {
+    // 
+    this.setState({currentUser: user})
+  }
+  updated = () => {
+    this.setState({updated:true})
+  }
+
   render() {
   return (
     <div className="App">
   
      <BrowserRouter>
-     <NavBar title='Paintr' icon="https://cdn5.vectorstock.com/i/1000x1000/55/84/love-couple-logo-vector-7545584.jpg" color="blue" subtitle="List of Paintng" />
+     <NavBar title='navBar' icon="https://cdn5.vectorstock.com/i/1000x1000/55/84/love-couple-logo-vector-7545584.jpg" color="blue" subtitle="List of Paintng" />
       <Switch> 
           <Route exact path= "/" render= { ()=>(
             this.state.currentUser === null? <LoginForm updateUser = {this.updateUser}/> :<Redirect to="/mainPage" />
@@ -62,7 +72,11 @@ class App extends Component {
      
           <Route exact path= "/profile" render= { ()=> ( 
             this.state.currentUser ?  <ProfileContainer 
-            currentUser={this.state.currentUser}  partner= {this.state.partner}  /> : <Redirect to="/" />
+                                          currentUser={this.state.currentUser} 
+                                          partner= {this.state.partner} 
+                                          handleEdit = {this.handleEdit}
+                                          updated = {this.update}
+                                      /> : <Redirect to="/" />
          
           )} /> 
           <Route render= { ()=><div> Page Not Found 404</div>} /> 

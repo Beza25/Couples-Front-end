@@ -29,7 +29,7 @@ class ChatContainer extends Component {
         })
         .then(response => response.json())
         .then(newText => {
-            this.setState({message: newText, texts: [...this.state.texts, newText]})
+            this.setState({texts: [...this.state.texts, newText]})
         
         })}
        
@@ -38,6 +38,19 @@ class ChatContainer extends Component {
 // (at this point the api has all the user text so I just have to show that text)then
 // change the DOM to show previous and existing user's text
 
+ deleteText = (id) => {
+
+    console.log("delete text")
+    
+    fetch(`http://localhost:3001/messages/${id}`, {
+        method:"DELETE"
+    })
+    let messages = this.state.texts 
+   const filteredText = messages.filter(message => message.id !== id)
+   this.setState({texts: filteredText})
+ }
+
+ 
     
     render() {
         return (   
@@ -48,15 +61,13 @@ class ChatContainer extends Component {
                         <div className="col-6"> 
         
                             <h1>{this.props.currentUser.name}</h1>
-            
-                            
-                            {this.state.texts.map((userText,index) => <Chat text={userText} key={index} user= {this.props.currentUser.name} /> ) }
+                            {this.state.texts.map((userText,index) => <Chat text={userText} key={index} user= {this.props.currentUser.name} deleteText= {this.deleteText} /> ) }
                         </div>
                         <br/>
                         <div className="col-6">
                             <h1>Partner</h1>
 
-                            {this.props.pTexts.map((partnerText,index) => <Chat text={partnerText} key={index} user= {this.props.partner.name}/>  ) }
+                            {this.props.pTexts.map((partnerText,index) => <Chat text={partnerText} key={index} user= {this.props.partner.name} deleteText= {this.deleteText} />  ) }
                         </div>
                     </div>
                 </div>

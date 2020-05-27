@@ -8,20 +8,20 @@ class SpecialDaysContainer extends Component{
     render() {
         return (
             <div>
-                 <h1>
+                 {/* <h1>
                      Special Days Container
                  </h1>
                  <div> 
                     <h1>
                         Special Calander (Create and Edit )
-                    </h1>
+                    </h1> */}
                      <SpecialDay />
-                </div>
+                {/* </div> */}
                  
                  <div>
-                    <h1>
+                    {/* <h1>
                         Special Card (Delete)
-                    </h1>
+                    </h1> */}
                      <SpecialDayCard />
 
                  </div>
