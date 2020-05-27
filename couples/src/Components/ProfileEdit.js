@@ -31,7 +31,10 @@ class ProfileEdit extends Component{
     handleGender = (e) => {
         this.setState({gender: e.target.value})
     }
-    handleSubmit = () =>{
+
+
+    handleSubmit = (e) =>{
+        e.preventDefault()
         console.log("Atempting to submit")
         const id = this.props.currentUser.id
         let user = {
@@ -48,7 +51,9 @@ class ProfileEdit extends Component{
             body: JSON.stringify(user)
 
         }).then(resp => resp.json())
-        .then(user => {   
+        .then(user => {
+         
+            console.log(user) 
             this.props.handleEdit(user)
             alert("Updated Sucesssfully")
         })
@@ -78,8 +83,8 @@ class ProfileEdit extends Component{
                         <input placeholder='img url' name= "img" value= {this.state.img} onChange={this.handleImg}/>
                     </Form.Field>
                     <Form.Field>
-                        <div class="ui form" value={this.state.gener} onChange={this.handleGender}>
-                            <div class="field">
+                        <div className="ui form" value={this.state.gener} onChange={this.handleGender}>
+                            <div className="field">
                                 <select>
                                 <option value="">Gender</option>
                                 <option value="male">Male</option>
@@ -88,7 +93,7 @@ class ProfileEdit extends Component{
                             </div>
                         </div>
                     </Form.Field>
-                    <Link to = "/mainpage"> <Button type='submit' className= "ui teal button">Submit</Button></Link> 
+                     <Button type='submit' className= "ui teal button">Submit</Button>
                     </Form>
                 </div> 
             </div>

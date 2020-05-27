@@ -9,7 +9,7 @@ class ChatContainer extends Component {
         super(props)
         // debugger
         this.state= {
-            texts: this.props.userTexts,
+            texts: this.props.userTexts,   
         }
     }
     createText = (text) => {
@@ -50,8 +50,26 @@ class ChatContainer extends Component {
    this.setState({texts: filteredText})
  }
 
+ updateText =(id) =>{
+
+     console.log("attempt to update", id)
+     fetch(`http://localhost:3001/messages/${id}`, {
+        method: "PATCH",
+        headers: {
+            "Content-Type": "Application/json"
+        },
+        body: JSON.stringify({isfavorited: true})
+     }).then( resp => resp.json())
+     .then(text => {
+        console.log(text)
+        let  messages = this.state.texts
+        messages.forEach( message => { if (message.id === text.id ) { message.isfavorited = text.isfavorited} }) 
+        this.setState({texts: messages})
+     })
+
+ }
  
-    
+  
     render() {
         return (   
            <div>
@@ -61,7 +79,13 @@ class ChatContainer extends Component {
                         <div className="col-6"> 
         
                             <h1>{this.props.currentUser.name}</h1>
-                            {this.state.texts.map((userText,index) => <Chat text={userText} key={index} user= {this.props.currentUser.name} deleteText= {this.deleteText} /> ) }
+                            {this.state.texts.map((userText,index) => <Chat text={userText}
+                                     key={index} 
+                                     user= {this.props.currentUser.name} 
+                                     deleteText= {this.deleteText} 
+                                     updateText = {this.updateText}
+                                
+                                      /> ) }
                         </div>
                         <br/>
                         <div className="col-6">

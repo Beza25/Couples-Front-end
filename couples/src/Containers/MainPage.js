@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import SideBar from '../Components/SideBar';
+
 import ChatContainer from '../Components/ChatContainer';
 
 
@@ -17,7 +17,7 @@ class MainPage extends Component{
                 <div className="row">
                     <div className="col-4">
                         <h1>SideBar</h1>
-                        <SideBar />
+                        {/* <SideBar /> */}
                     
                     </div>
                     <div className="col-8">
