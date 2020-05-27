@@ -7,41 +7,31 @@ class ProfileContainer extends Component{
     constructor(){
         super()
         this.state={
-            editClicked: false
+            editClicked: false,
+            submitClicked: false
         }
     }
 
     handleEdit= () => {
         this.setState({editClicked: true})
+       
     }
-
-    // When the button is clicked render the edit form 
-   
-
     render (){
-       
-        
-       
         return(
             <div>
                 <h1>
                     ProfileContainer
-
                 </h1>
-                <div>
-                <ProfileInfo  currentUser = {this.props.currentUser} partner= {this.props.partner} handleEdit={this.handleEdit}/>
-
-                </div>
-               
-               <div>
-                   {this.state.editClicked? <ProfileEdit />: null }
-               
-               </div>
-                
-
-             
-               
-             
+                    
+                   {this.state.editClicked ?  <ProfileEdit currentUser = {this.props.currentUser}
+                                                            handleEdit = {this.props.handleEdit}
+                                                /> : 
+                     <ProfileInfo  currentUser = {this.props.currentUser} 
+                                    partner= {this.props.partner}
+                                    handleEdit={this.handleEdit} 
+                        />
+                    }
+                    
             </div>
 
         );

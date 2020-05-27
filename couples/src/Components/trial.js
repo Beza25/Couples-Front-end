@@ -96,8 +96,20 @@
     </div>
 </div>
 
-this.setState({texts: [...texts, this.props.userTexts]})
-console.log(this.state.texts)
+
+
+
+
+
+// <Form.Field>
+// {/* <div className="ui calendar" id="example2">
+//     <div className="ui input left icon">
+//     <i className="calendar icon"></i>
+//     <input type="text" placeholder="Date" name= "birthday" value= {this.props.currentUser.birthday}/>
+//     </div>
+// </div> */}
+
+// </Form.Field>
 
 
 // <div className="item">
