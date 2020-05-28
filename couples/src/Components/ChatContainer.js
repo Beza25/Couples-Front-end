@@ -30,6 +30,7 @@ class ChatContainer extends Component {
         .then(response => response.json())
         .then(newText => {
             this.setState({texts: [...this.state.texts, newText]})
+
         
         })}
        
@@ -50,15 +51,15 @@ class ChatContainer extends Component {
    this.setState({texts: filteredText})
  }
 
- updateText =(id) =>{
+ updateText =(text) =>{
 
-     console.log("attempt to update", id)
-     fetch(`http://localhost:3001/messages/${id}`, {
+     console.log("attempt to update", text)
+     fetch(`http://localhost:3001/messages/${text.id}`, {
         method: "PATCH",
         headers: {
             "Content-Type": "Application/json"
         },
-        body: JSON.stringify({isfavorited: true})
+        body: JSON.stringify({isfavorited: !text.isfavorited})
      }).then( resp => resp.json())
      .then(text => {
         console.log(text)
@@ -78,7 +79,7 @@ class ChatContainer extends Component {
                         
                         <div className="col-6"> 
         
-                            <h1>{this.props.currentUser.name}</h1>
+                            <h1 className= "chat-Text" >{this.props.currentUser.name}</h1>
                             {this.state.texts.map((userText,index) => <Chat text={userText}
                                      key={index} 
                                      user= {this.props.currentUser.name} 
@@ -89,7 +90,7 @@ class ChatContainer extends Component {
                         </div>
                         <br/>
                         <div className="col-6">
-                            <h1>Partner</h1>
+                            <h1 className= "chat-Text">Partner</h1>
 
                             {this.props.pTexts.map((partnerText,index) => <Chat text={partnerText} key={index} user= {this.props.partner.name} deleteText= {this.deleteText} />  ) }
                         </div>

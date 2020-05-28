@@ -18,11 +18,8 @@ class ProfileContainer extends Component{
     }
     render (){
         return(
-            <div>
-                <h1>
-                    ProfileContainer
-                </h1>
-                    
+            <div className="background-img"  textAlign='center' style={{ height: '100vh' }}>
+             
                    {this.state.editClicked ?  <ProfileEdit currentUser = {this.props.currentUser}
                                                             handleEdit = {this.props.handleEdit}
                                                 /> : 

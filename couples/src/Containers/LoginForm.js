@@ -52,7 +52,8 @@ class LoginForm extends Component{
     render (){
        
         return(
-            <Grid textAlign='center' style={{ height: '100vh' }} verticalAlign='middle'>
+            <div className= "background-img">
+                <Grid textAlign='center' style={{ height: '100vh' }} verticalAlign='middle'>
                 <Grid.Column style={{ maxWidth: 450 }}>
                 <Header as='h2' color='teal' textAlign='center'>
                     <Image /> Log-in to your account
@@ -88,6 +89,10 @@ class LoginForm extends Component{
                 </Message>
                 </Grid.Column>
             </Grid>
+
+            </div>
+
+            
         );
     }
 

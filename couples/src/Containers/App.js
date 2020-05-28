@@ -42,12 +42,17 @@ class App extends Component {
   }
 
   onChange = (e)=> {
+  
     this.setState({ searchTerm: e.target.value})
+  
+ 
     this.filtered()
   }
 
   filtered = () =>{ 
-    return this.state.specialDates.filter(sd => sd.location.toLowerCase().includes(this.state.searchTerm.toLowerCase()))}
+    const filtered = this.state.specialDates.filter(sd => sd.location.toLowerCase().includes(this.state.searchTerm.toLowerCase()))
+    return filtered
+  }
 
   handleEdit = (user) => {
     // 
@@ -59,7 +64,7 @@ class App extends Component {
 
   render() {
   return (
-    <div className="App">
+    <div className="App"  >
   
      <BrowserRouter>
      <NavBar title='navBar' icon="https://cdn5.vectorstock.com/i/1000x1000/55/84/love-couple-logo-vector-7545584.jpg" color="blue" subtitle="List of Paintng" />

@@ -1,6 +1,11 @@
+
+
 .App {
   text-align: center;
+  background-image:  url( "https://i.pinimg.com/originals/45/ce/c7/45cec757faf8d07318cc829dcf21c697.jpg");
 }
+
+
 
 .App-logo {
   height: 40vmin;
@@ -37,6 +42,67 @@
   }
 }
 
-.profile-card{
-  float-right: right;
+.bottom{
+  padding-top: 50px;
+  padding-left:600px;
+  max-width: 75%;
+  
+ 
+}
+
+.chat-Text{
+  font-family: 'Piedra', cursive;
+  font-size: 40px;
+  color: teal;
+
+}
+.greetings{
+  font-family: 'Piedra', cursive;
+  font-size: 75px;
+  color: teal;
+background-color: rgba(149, 220, 226, 0.666);
+
+}
+.profile-edit{
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: column;
+  align-content: center;
+}
+.top{
+  color: rgba(104, 19, 19, 0.666);
+  max-width: 50%;
+  margin: 0 auto;
+/* background: -moz-linear-gradient(left, #CE5937 0%, #1C6EA4 67%, #C59237 100%);
+background: -webkit-linear-gradient(left, #CE5937 0%, #1C6EA4 67%, #C59237 100%);
+background: linear-gradient(to right, #CE5937 0%, #1C6EA4 67%, #C59237 100%); */
+
+}
+
+#profile-box{
+  border: 1px solid red;
+}
+#profile-container{
+    background-image: url( "https://i.pinimg.com/originals/45/ce/c7/45cec757faf8d07318cc829dcf21c697.jpg");
+}
+.background-img{
+  background-image: url( "https://i.pinimg.com/originals/45/ce/c7/45cec757faf8d07318cc829dcf21c697.jpg");
+  background-size: cover;
+  height:100%;
+
+}
+/* "https://i.pinimg.com/originals/45/ce/c7/45cec757faf8d07318cc829dcf21c697.jpg" */
+
+/* "https://i.pinimg.com/564x/db/79/07/db790798b9c7158db388ef6d106e8c60.jpg" */
+
+#chat-container{
+  background-image: url(  "https://i.pinimg.com/originals/c4/54/b0/c454b0e7126435336a4a41572d7d8882.jpg");
+
+
+}
+.chat-box{
+  padding-right: 50px;
+  padding-left: 50px;
+  padding-top: 20px;
+
 }

@@ -8,12 +8,27 @@ class ProfileInfo extends Component{
     render (){
         // console.log(this.props.currentUser)
         return(
+          <div>
+
+          <div className="top">
+              <div className="card">
+                  <div className="content">
+                  <div className="header">
+                      <h1 className ="greetings"> {this.props.currentUser.name}'s Profile</h1>
+                  </div>
+                  </div>
+            
+
+                </div>    
+          </div>
+          <div className="bottom">
           <div  className= "profile-card">
             <div className="ui card">
                
                <div className="image">
                  <img src={this.props.currentUser.img}/>
                </div>
+              
                <div className="content">
                  <a className="header">{this.props.currentUser.name}</a>
              
@@ -37,6 +52,11 @@ class ProfileInfo extends Component{
    
              </div>
 
+          </div>
+
+          </div>
+       
+        
           </div>
             
 

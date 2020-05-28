@@ -19,35 +19,51 @@ class MainPage extends Component{
 
        
         return(
-           <div >
+           <div className= "background-img"  textAlign='center' style={{ height: '100vh' }}>
 
-                <h1> Welcome {this.props.currentUser.name}</h1>
+            <div className="top">
+              <div className="card">
+                  <div className="content">
+                  <div className="header">
+                      <h1 className ="greetings">  Welcome {this.props.currentUser.name}</h1>
+                  </div>
+                  </div>
+                  </div>
+            
+
+                </div>  
+
                
-                <div className="ui segment">
-                <div className="ui two column very relaxed grid">
-                    <div className="column">
-                        <h2>SideBar</h2>
-                        <Link to = "/specialDates"> 
-                            <div className="ui blue submit button" > Special Dates </div>
-                        </Link>
-                        
-                    </div>
-                    <div className="column">
-                        <h2> Chat</h2>
+               <div className="chat-box">
+                <div className="ui segment"  id="chat-container">
+                        <div className="ui two column very relaxed grid">
+                            <div className="column">
+                                <h2>SideBar</h2>
+                                <Link to = "/specialDates"> 
+                                    <div className="ui blue submit button" > 
+                                    Special Dates 
+                                    </div>
+                                </Link>
+                                
+                            </div>
+                            <div className="column">
+                                <h2> Chat</h2>
 
-                        <ChatContainer 
-                            currentUser={this.props.currentUser} 
-                            userTexts= {this.props.userTexts}
-                            partner= {this.props.partner}
-                            pTexts= {this.props.pTexts}
-                            />
-                    </div>
+                                <ChatContainer 
+                                    currentUser={this.props.currentUser} 
+                                    userTexts= {this.props.userTexts}
+                                    partner= {this.props.partner}
+                                    pTexts= {this.props.pTexts}
+                                    />
+                            </div>
+                        </div>
+                        <div className="ui vertical divider">
+                            and
+                        </div>
                 </div>
-                <div className="ui vertical divider">
-                    and
-                </div>
-                </div>
-    }
+
+               </div>
+              
 
            </div>
        

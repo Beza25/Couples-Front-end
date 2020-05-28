@@ -61,42 +61,68 @@ class ProfileEdit extends Component{
     render (){
        
         return(
-            <div className= "profile-card">
-               
-                <div className="ui card">
-                <h1>Edit Profile</h1>
-                <div className="image">
-                    <img src={this.props.currentUser.img}/>
-                </div>
-
-                <Form onSubmit ={this.handleSubmit}>
-                    <Form.Field  >
-                        <label>First Name</label>
-                        <input placeholder='First Name' name= "name" value= {this.state.name} onChange = {this.handleName}/>
-                    </Form.Field>
-                    <Form.Field  >
-                        <label>User Name</label>
-                        <input placeholder='username'  name= "username" value= {this.state.username} onChange ={this.handleUsername} />
-                    </Form.Field>
-                    <Form.Field >
-                        <label>Edit image</label>
-                        <input placeholder='img url' name= "img" value= {this.state.img} onChange={this.handleImg}/>
-                    </Form.Field>
-                    <Form.Field>
-                        <div className="ui form" value={this.state.gener} onChange={this.handleGender}>
-                            <div className="field">
-                                <select>
-                                <option value="">Gender</option>
-                                <option value="male">Male</option>
-                                <option value="female">Female</option>
-                                </select>
-                            </div>
+            <div >
+                <div className="top">
+                    <div className="card">
+                        <div className="content">
+                        <div className="header">
+                            <h1 className ="greetings"> {this.props.currentUser.name}'s Profile</h1>
                         </div>
-                    </Form.Field>
-                     <Button type='submit' className= "ui teal button">Submit</Button>
-                    </Form>
+                        </div>
+                    </div>
+            
                 </div> 
+                <div className="bottom" >
+                    <div className= "profile-card">
+               
+                        <div className="ui card" id="profile-box">
+            
+                        <div className="image">
+                            <img src={this.props.currentUser.img}/>
+                        </div>
+                        <br/>
+                        <div className="profile-edit" >
+                        <Form onSubmit ={this.handleSubmit}>
+                            <Form.Field  >
+                                <label>First Name</label>
+                                <input placeholder='First Name' name= "name" value= {this.state.name} onChange = {this.handleName}/>
+                            </Form.Field>
+                            <br/>
+                            <Form.Field  >
+                                <label>User Name</label>
+                                <input placeholder='username'  name= "username" value= {this.state.username} onChange ={this.handleUsername} />
+                            </Form.Field>
+                            <br/>
+                            <Form.Field >
+                                <label>Edit image</label>
+                                <input placeholder='img url' name= "img" value= {this.state.img} onChange={this.handleImg}/>
+                            </Form.Field>
+                            <br/>
+                            <Form.Field>
+                                <div className="ui form" value={this.state.gener} onChange={this.handleGender}>
+                                    <div className="field">
+                                        <select>
+                                        <option value="">Gender</option>
+                                        <option value="male">Male</option>
+                                        <option value="female">Female</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </Form.Field>
+                            <br/>
+                            <Button type='submit' className= "ui teal button">Submit</Button>
+                            </Form>
+
+                        </div>
+
+                        
+                        </div> 
+                    </div>
+
+                </div>
             </div>
+         
+  
 
         );
     }
