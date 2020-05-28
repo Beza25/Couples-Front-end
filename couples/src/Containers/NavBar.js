@@ -1,10 +1,6 @@
 
 import React from "react";
 import {Link} from 'react-router-dom';
-<<<<<<< HEAD
-=======
-
->>>>>>> profile
 
 const NavBar =  (props )=> {
     return (

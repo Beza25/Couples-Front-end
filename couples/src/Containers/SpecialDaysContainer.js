@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import NewSpecialDay from "../Components/NewSpecialDay";
 import SpecialDayCard from "../Components/SDCard";
-// import Search from "../Components/Search";
+import Search from "../Components/Search";
 
 
 
@@ -17,16 +17,15 @@ class SpecialDaysContainer extends Component{
         this.setState({showForm: !this.state.showForm})
     }
 
-
-
     render() {
+        console.log(this.props.filtered)
         return (
             <div>
 
                 <div className="ui center aligned basic segment">
                     <div className="ui left icon action input">
                      
-                        {/* <Search onChange={this.props.handleSearch} searchTerm = {this.props.searchTerm} /> */}
+                        <Search onChange={this.props.onChange} searchTerm = {this.props.searchTerm} />
                     </div>
                     <div className="ui horizontal divider">
                         Or
@@ -38,7 +37,7 @@ class SpecialDaysContainer extends Component{
                     {this.state.shoForm ?  <NewSpecialDay /> :  null}
                     <div className="ui horizontal divider"> </div>
 
-                       {this.props.filtered.map (specialDay =>  <SpecialDayCard  key={specialDay.id} specialDate = {specialDay}/> )} 
+                       {this.props.filtered.map(specialDay =>  <SpecialDayCard  key={specialDay.id} specialDate = {specialDay}/> )} 
 
                     
                 </div>

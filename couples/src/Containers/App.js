@@ -1,11 +1,10 @@
-
 import React, { Component } from 'react';
 import '../App.css';
 import NavBar from'./NavBar' ;
 import LoginForm from './LoginForm';
 import MainPage from './MainPage';
 import ProfileContainer from './ProfileContainer';
-// import SpecialDaysContainer from "./SpecialDaysContainer"
+import SpecialDaysContainer from "./SpecialDaysContainer";
 import { BrowserRouter, Route, Redirect, Switch} from 'react-router-dom';
 
 class App extends Component {
@@ -17,10 +16,10 @@ class App extends Component {
       currentUser: null,
       userTexts: [],
       partner: null,
-
       pTexts:[],
+      updated: false,
       specialDates: [],
-      updated: false
+      searchTerm: ""
     }
   }
 
@@ -37,19 +36,18 @@ class App extends Component {
                   userTexts: userInfo.userTexts,
                   partner: userInfo.partner,
                   pTexts: userInfo.p_texts,
-                  // specialDates: userInfo.special_days
+                  specialDates: userInfo.special_days
 
                  })
   }
 
-  onChange= (e )=>{
+  onChange = (e)=> {
     this.setState({ searchTerm: e.target.value})
+    this.filtered()
   }
 
-  // filterd = this.state.specialDates.filter(sd => sd.title.lowerCase().includes(this.state.searchTerm.lowerCase()))
-
-  //if current urser is null show loginform
-  // else redirect to mainpage
+  filtered = () =>{ 
+    return this.state.specialDates.filter(sd => sd.location.toLowerCase().includes(this.state.searchTerm.toLowerCase()))}
 
   handleEdit = (user) => {
     // 
@@ -60,7 +58,7 @@ class App extends Component {
   }
 
   render() {
-    // console.log(this.state.specialDates)
+    console.log(this.filtered)
   return (
     <div className="App">
   
@@ -90,15 +88,15 @@ class App extends Component {
                                       /> : <Redirect to="/" />
          
           )} /> 
-             {/* <Route exact path= "/specialDates" render= { ()=> ( 
+             <Route exact path= "/specialDates" render= { ()=> ( 
             this.state.currentUser ?  <SpecialDaysContainer
             currentUser={this.state.currentUser} 
              partner= {this.state.partner}
               specialDates= {this.state.specialDates}
               onChange = {this.onChange}
               searchTerm ={this.state.searchTerm} 
-              filtered= {this.filterd()}
-               /> : <Redirect to="/" /> */}
+              filtered= {this.filtered()}
+               /> : <Redirect to="/" />
          
           )} /> 
 

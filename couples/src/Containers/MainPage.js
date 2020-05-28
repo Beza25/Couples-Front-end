@@ -20,7 +20,6 @@ class MainPage extends Component{
        
         return(
            <div >
-<<<<<<< HEAD
 
                 <h1> Welcome {this.props.currentUser.name}</h1>
                
@@ -32,15 +31,6 @@ class MainPage extends Component{
                             <div className="ui blue submit button" > Special Dates </div>
                         </Link>
                         
-=======
-               <h1> Welcome {this.props.currentUser.name}</h1>
-            <div className= "container">
-                <div className="row">
-                    <div className="col-4">
-                        <h1>SideBar</h1>
-                        {/* <SideBar /> */}
-                    
->>>>>>> profile
                     </div>
                     <div className="column">
                         <h2> Chat</h2>
