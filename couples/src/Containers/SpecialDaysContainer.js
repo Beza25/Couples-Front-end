@@ -13,12 +13,11 @@ class SpecialDaysContainer extends Component{
         }
     }
     getForm = ()=>{
-        console.log("was clicked")
+
         this.setState({showForm: !this.state.showForm})
     }
 
     render() {
-        console.log(this.props.filtered)
         return (
             <div>
 
